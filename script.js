@@ -3,6 +3,12 @@ window.onload = function () {
     var mainNav = document.getElementById('main-nav');
     var menuItems = document.querySelectorAll('.dropdown li');
     var selectableNavs = document.querySelectorAll('.selectable-nav');
+    var closeDiv=document.querySelectorAll('.close');
+    var mainSection=document.getElementById('main');
+
+    closeDiv[0].onclick=closeMenu;
+    closeDiv[1].onclick=closeMenu;
+    mainSection.onclick=closeMenu;
 
     menuItems[0].onclick = function () {
         menuItems[1].classList.remove('selected');
@@ -31,6 +37,14 @@ window.onload = function () {
             mainNav.classList.remove('opened'); 
             selectableNavs[1].classList.remove('selected');
         }
+    }
+
+    function closeMenu(){
+        mainNav.classList.remove('opened');
+        menuItems[0].classList.remove('selected');
+        menuItems[1].classList.remove('selected');
+        selectableNavs[0].classList.remove('selected');
+        selectableNavs[1].classList.remove('selected');
     }
 
 };
